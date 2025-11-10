@@ -10,6 +10,9 @@ import { Button } from '@/components/ui/button';
 import { GraduationCap, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useAuthStore } from '@/stores/useAuthStore';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import Link from 'next/link';
 export default function Login() {
   const router = useRouter(); // Replace useNavigate
   const { toast } = useToast();
@@ -67,12 +70,14 @@ export default function Login() {
   };
 
   return (
+    <>
+    <Header />
     <div className="flex flex-col min-h-[calc(100vh-4rem)]">
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-2">
         <div
           className="hidden lg:block relative"
           style={{
-            backgroundImage: 'ur[](https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=1200&fit=crop)',
+            backgroundImage: 'url(/assets/salon-hero-1.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -179,13 +184,14 @@ export default function Login() {
                   <span className="text-muted-foreground">
                     {isLogin ? "Don't have an account? " : 'Already have an account? '}
                   </span>
-                  <button
+                  <Link
+                    href={isLogin ? '/register' : '/login'}
                     type="button"
-                    onClick={() => setIsLogin(!isLogin)}
+                    
                     className="text-primary hover:underline font-medium"
                   >
                     {isLogin ? 'Sign up' : 'Sign in'}
-                  </button>
+                  </Link>
                 </div>
               </form>
             </CardContent>
@@ -193,5 +199,7 @@ export default function Login() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

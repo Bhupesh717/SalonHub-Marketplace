@@ -10,39 +10,41 @@ import type { Metadata } from "next"
 import { CTASection } from "@/components/CTASection"
 import ClientLogosSlider from "@/components/ClientLogosSlider"
 import Hero from "@/components/Hero"
+import HeroNew from "@/components/jsonHero"
+import SalonParallaxBanner from "@/components/SalonParallaxBanner"
 
 export const metadata: Metadata = {
-  title: "School for Schools - Transforming Education with Technology",
+  title: "Salon Marketplace",
   description:
-    "Innovative ERP solutions and AI-powered learning labs for modern education. Empower your school with cutting-edge technology.",
+    "Salon Marketplace - Find the best salons and services",
   keywords:
-    "school management, ERP system, education technology, AI learning, robotics labs, digital classrooms, school ERP software",
+    "salon, salon marketplace ",
   openGraph: {
-    title: "School for Schools - Transforming Education with Technology",
+    title: "Salon Marketplace",
     description:
-      "Innovative ERP solutions and AI-powered learning labs for modern education. Empower your school with cutting-edge technology.",
-    url: "https://schoolforschools.com",
+      "Salon Marketplace - Find the best salons and services",
+    url: "https://salonmarketplace.com",
     type: "website",
-    siteName: "School for Schools",
+    siteName: "Salon Marketplace",
     locale: "en_US",
     images: [
       {
-        url: "https://schoolforschools.com/og-image.jpg", // ← your OG image (1200×630 recommended)
+        url: "https://salonmarketplace.com/og-image.jpg", // ← your OG image (1200×630 recommended)
         width: 1200,
         height: 630,
-        alt: "School for Schools - Transforming Education with Technology",
+        alt: "Salon Marketplace - Find the best salons and services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "School for Schools - Transforming Education with Technology",
+    title: "Salon Marketplace",
     description:
-      "Innovative ERP solutions and AI-powered learning labs for modern education.",
-    images: ["https://schoolforschools.com/og-image.jpg"],
-    creator: "@SchoolForSchools", // optional if you have a Twitter handle
+      "Salon Marketplace - Find the best salons and services",
+    images: ["https://salonmarketplace.com/og-image.jpg"],
+    creator: "@SalonMarketplace", // optional if you have a Twitter handle
   },
-  metadataBase: new URL("https://schoolforschools.com"),
+  metadataBase: new URL("https://salonmarketplace.com"),
 };
 
 export default function Home() {
@@ -85,40 +87,40 @@ export default function Home() {
         </div>
       </section> */}
       <Hero />
+      {/* <HeroNew/> */}
       <ClientLogosSlider />
       {/* Why SFS Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why School for Schools?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Salon Marketplace?</h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              We combine expertise in education with cutting-edge technology to deliver solutions that truly make a
-              difference.
+           We bring together artistry and innovation to help salons deliver exceptional beauty experiences every day.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: BarChart3,
-                title: "Comprehensive ERP",
-                description: "Streamline all school operations from admissions to alumni management",
-              },
-              {
-                icon: Lightbulb,
-                title: "AI & Innovation",
-                description: "Empower students with AI, robotics, and innovation challenges",
-              },
-              {
-                icon: Users,
-                title: "Expert Support",
-                description: "Dedicated team to ensure smooth implementation and ongoing success",
-              },
-              {
-                icon: Zap,
-                title: "Future Ready",
-                description: "Stay ahead with continuous updates and emerging technologies",
-              },
+    icon: BarChart3,
+    title: "All-in-One Management",
+    description: "Manage appointments, staff, inventory, and payments seamlessly in one platform",
+  },
+  {
+    icon: Lightbulb,
+    title: "Smart Insights",
+    description: "Use AI-powered analytics to understand trends and grow your salon business",
+  },
+  {
+    icon: Users,
+    title: "Customer Engagement",
+    description: "Enhance client relationships with personalized offers and loyalty programs",
+  },
+  {
+    icon: Zap,
+    title: "Future Ready",
+    description: "Stay ahead with new features, marketplace integrations, and beauty tech innovation",
+  },
             ].map((item, index) => {
               const Icon = item.icon
               return (
@@ -141,10 +143,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Empowering Educators Worldwide
+                Empowering Salons Worldwide
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Our platform connects schools with the resources and community they need to thrive. From curriculum development to administrative tools, we've got you covered.
+                Our platform connects salons with the resources and community they need to thrive. From curriculum development to administrative tools, we've got you covered.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">

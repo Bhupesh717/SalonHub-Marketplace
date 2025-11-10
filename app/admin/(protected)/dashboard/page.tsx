@@ -2,55 +2,66 @@
 
 import { useEffect } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Users, School, BookOpen, TrendingUp } from 'lucide-react'
+import { Scissors, Calendar, DollarSign, Clock, Star } from 'lucide-react'
 import { useAuthStore } from '@/stores/useAuthStore'
-import { useStudentStore } from '@/stores/studentStore'
-import { useSchoolStore } from '@/stores/schoolStore'
+import { useServiceStore } from '@/stores/serviceStore'
+import { useBookingStore } from '@/stores/bookingStore'
+import { useRouter } from 'next/navigation'
+import { Button } from '@/components/ui/button'
 
 export default function DashboardPage() {
+    const router = useRouter()
     const { user } = useAuthStore()
-    console.log('Dashboard user:', user) // Debug log
-    const { students, fetchStudents } = useStudentStore()
-    const { schools, fetchSchools } = useSchoolStore()
-
-
-
-
+    const { services, fetchServices } = useServiceStore()
+    const { 
+        bookings, 
+        fetchBookings, 
+        isLoading: isLoadingBookings 
+    } = useBookingStore()
 
     useEffect(() => {
-        if (user?.role?.name === 'Admin') {
-            fetchSchools()
-        }
-        fetchStudents()
-    }, [user, fetchSchools, fetchStudents])
+        fetchServices()
+        fetchBookings()
+    }, [fetchServices, fetchBookings])
+    
+    // Calculate dashboard metrics
+    const today = new Date().toISOString().split('T')[0]
+    const todayBookings = bookings.filter(booking => booking.bookingDate === today)
+    const upcomingBookings = bookings
+        .filter(booking => booking.bookingDate >= today)
+        .sort((a, b) => new Date(a.bookingDate).getTime() - new Date(b.bookingDate).getTime())
+        .slice(0, 5)
+    
+    const totalRevenue = bookings.reduce((sum, booking) => sum + (booking.price || 0), 0)
+    const averageRating = 4.7 // This would come from your review system
 
     const stats = [
         {
-            title: 'Total Students',
-            value: students.length.toString(),
-            icon: Users,
-            description: 'Enrolled students',
+            title: 'Total Services',
+            value: services.length.toString(),
+            icon: Scissors,
+            description: 'Available services',
             show: true,
         },
         {
-            title: 'Total Schools',
-            value: schools.length.toString(),
-            icon: School,
-            description: 'Partner schools',
-            show: user?.role?.name === 'Admin',
-        },
-        {
-            title: 'Active Courses',
-            value: '24',
-            icon: BookOpen,
-            description: 'Available courses',
+            title: "Today's Appointments",
+            value: todayBookings.length.toString(),
+            icon: Calendar,
+            description: 'Bookings for today',
             show: true,
         },
         {
-            title: 'Completion Rate',
-            value: '87%',
-            icon: TrendingUp,
-            description: 'Average completion',
+            title: 'Total Revenue',
+            value: `$${totalRevenue.toFixed(2)}`,
+            icon: DollarSign,
+            description: 'All time earnings',
+            show: true,
+        },
+        {
+            title: 'Average Rating',
+            value: averageRating.toFixed(1),
+            icon: Star,
+            description: 'Customer satisfaction',
             show: true,
         },
     ]
@@ -58,10 +69,17 @@ export default function DashboardPage() {
     return (
         <div className="space-y-8">
             <div>
-                <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
-                <p className="text-muted-foreground">
-                    Welcome back, {user?.name || user?.email}! {user?.role?.name === 'Admin' ? '(Administrator)' : '(School)'}
-                </p>
+                <div className="flex justify-between items-center">
+                    <div>
+                        <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
+                        <p className="text-muted-foreground">
+                            Welcome back, {user?.name || user?.email}! {user?.role?.name === 'Admin' ? '(Administrator)' : '(Staff)'}
+                        </p>
+                    </div>
+                    <Button onClick={() => router.push('/admin/bookings/new')}>
+                        <Calendar className="mr-2 h-4 w-4" /> New Booking
+                    </Button>
+                </div>
             </div>
 
             {/* Stats Grid */}
@@ -91,22 +109,41 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Recent Students</CardTitle>
-                        <CardDescription>Latest student enrollments</CardDescription>
+                        <div className="flex justify-between items-center">
+                            <div>
+                                <CardTitle>Upcoming Appointments</CardTitle>
+                                <CardDescription>Next scheduled services</CardDescription>
+                            </div>
+                            <Button 
+                                variant="ghost" 
+                                size="sm" 
+                                onClick={() => router.push('/admin/bookings')}
+                                className="text-primary"
+                            >
+                                View All
+                            </Button>
+                        </div>
                     </CardHeader>
                     <CardContent>
-                        {students.length === 0 ? (
-                            <p className="text-sm text-muted-foreground">No students found</p>
+                        {upcomingBookings.length === 0 ? (
+                            <p className="text-sm text-muted-foreground">No upcoming appointments</p>
                         ) : (
                             <div className="space-y-4">
-                                {students.slice(0, 5).map((student) => (
-                                    <div key={student.id} className="flex items-center justify-between">
-                                        <div>
-                                            <p className="text-sm font-medium">{student.name}</p>
-                                            <p className="text-xs text-muted-foreground">{student.email}</p>
+                                {upcomingBookings.map((booking) => (
+                                    <div key={booking.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 rounded-full bg-primary/10">
+                                                <Calendar className="w-4 h-4 text-primary" />
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium">{booking.serviceName}</p>
+                                                <p className="text-xs text-muted-foreground">
+                                                    {new Date(booking.bookingDate).toLocaleDateString()} at {booking.bookingTime}
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div className="text-xs text-muted-foreground">
-                                            Grade {student.grade}
+                                        <div className="text-sm font-medium">
+                                            ${booking.price}
                                         </div>
                                     </div>
                                 ))}
@@ -115,33 +152,51 @@ export default function DashboardPage() {
                     </CardContent>
                 </Card>
 
-                {user?.role?.name === 'Admin' && (
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Partner Schools</CardTitle>
-                            <CardDescription>Registered educational institutions</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            {schools.length === 0 ? (
-                                <p className="text-sm text-muted-foreground">No schools found</p>
-                            ) : (
-                                <div className="space-y-4">
-                                    {schools.slice(0, 5).map((school) => (
-                                        <div key={school.id} className="flex items-center justify-between">
-                                            <div>
-                                                <p className="text-sm font-medium">{school.name}</p>
-                                                <p className="text-xs text-muted-foreground">{school.email}</p>
+                <Card>
+                    <CardHeader>
+                        <div className="flex justify-between items-center">
+                            <div>
+                                <CardTitle>Popular Services</CardTitle>
+                                <CardDescription>Most booked services</CardDescription>
+                            </div>
+                            <Button 
+                                variant="ghost" 
+                                size="sm" 
+                                onClick={() => router.push('/admin/services')}
+                                className="text-primary"
+                            >
+                                View All
+                            </Button>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        {services.length === 0 ? (
+                            <p className="text-sm text-muted-foreground">No services available</p>
+                        ) : (
+                            <div className="space-y-4">
+                                {services.slice(0, 5).map((service) => (
+                                    <div key={service.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 rounded-full bg-primary/10">
+                                                <Scissors className="w-4 h-4 text-primary" />
                                             </div>
-                                            <div className="text-xs text-muted-foreground">
-                                                {school.address}
+                                            <div>
+                                                <p className="text-sm font-medium">{service.name}</p>
+                                                <p className="text-xs text-muted-foreground">
+                                                    {service.duration_minutes} min • ${service.price}
+                                                </p>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
-                            )}
-                        </CardContent>
-                    </Card>
-                )}
+                                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                                            <Clock className="w-3.5 h-3.5" />
+                                            <span>{service.duration_minutes} min</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </CardContent>
+                </Card>
             </div>
         </div>
     )

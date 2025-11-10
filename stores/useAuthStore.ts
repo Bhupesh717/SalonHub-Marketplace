@@ -50,11 +50,22 @@ interface AuthState {
   logout: () => void;
 }
 
+// Helper function to safely access localStorage
+const getLocalStorage = () => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+  return window.localStorage;
+};
+
 // Load stored auth state
 const loadStoredAuth = () => {
   try {
-    const token = localStorage.getItem('token');
-    const storedUser = localStorage.getItem('user');
+    const storage = getLocalStorage();
+    if (!storage) return { user: null, isAuthenticated: false };
+    
+    const token = storage.getItem('token');
+    const storedUser = storage.getItem('user');
     const user = storedUser ? JSON.parse(storedUser) : null;
 
     if (token && user) {
@@ -71,16 +82,19 @@ const loadStoredAuth = () => {
 // Save auth state to storage
 const saveAuthState = (user: User | null, token: string | null) => {
   try {
+    const storage = getLocalStorage();
+    if (!storage) return;
+    
     if (user && token) {
-      localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('token', token);
-      localStorage.setItem('roleId', String(user.role_id));
-      localStorage.setItem('roleName', user.role.name);
+      storage.setItem('user', JSON.stringify(user));
+      storage.setItem('token', token);
+      storage.setItem('roleId', String(user.role_id));
+      storage.setItem('roleName', user.role.name);
     } else {
-      localStorage.removeItem('user');
-      localStorage.removeItem('token');
-      localStorage.removeItem('roleId');
-      localStorage.removeItem('roleName');
+      storage.removeItem('user');
+      storage.removeItem('token');
+      storage.removeItem('roleId');
+      storage.removeItem('roleName');
     }
   } catch (error) {
     console.error('Error saving auth state:', error);

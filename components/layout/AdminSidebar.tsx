@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { LayoutDashboard, Users, School, LogOut, Menu } from "lucide-react";
+import { LayoutDashboard, Users, School, LogOut, Menu, Scissors, Calendar } from "lucide-react";
 import { useAuthStore } from "@/stores/useAuthStore";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -50,11 +50,29 @@ export function AdminSidebar() {
             icon: Users,
             show: userRole === "Admin",
         },
+        // {
+        //     name: "Schools",
+        //     href: "/admin/schools",
+        //     icon: School,
+        //     show: userRole === "Admin",
+        // },
         {
-            name: "Schools",
-            href: "/admin/schools",
-            icon: School,
+            name: "Salons",
+            href: "/admin/salons",
+            icon: Scissors,
+            show: userRole === "Admin" || userRole === "SalonOwner",
+        },
+        {
+            name: "Services",
+            href: "/admin/admin-services",
+            icon: Scissors,
             show: userRole === "Admin",
+        },
+        {
+            name: "Bookings",
+            href: "/admin/bookings",
+            icon: Calendar,
+            show: userRole === "Admin" || userRole === "SalonOwner",
         },
     ].filter((item) => item.show);
 

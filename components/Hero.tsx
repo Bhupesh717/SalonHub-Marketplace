@@ -31,8 +31,8 @@ const Button = ({
     size === "lg" ? "px-8 py-4 text-lg" : "px-6 py-2 text-base";
   const variantClasses =
     variant === "outline"
-      ? "border-2 border-gray-300 bg-transparent text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900"
-      : "bg-gradient-to-r from-gray-800 to-gray-900 text-white hover:from-gray-900 hover:to-black shadow-lg";
+      ? "border-2 border-pink-300 bg-transparent text-pink-700 hover:bg-pink-900 hover:text-white hover:border-pink-900"
+      : "bg-gradient-to-r from-pink-800 to-pink-900 text-white hover:from-pink-900 hover:to-black shadow-lg";
 
   return (
     <button
@@ -85,35 +85,32 @@ export default function Hero() {
   const slides = [
     {
       id: 1,
-      badge: "Smart Management",
-      title: ["Modern", "School", "Solutions"],
-      description:
-        "Transform your educational institution with our comprehensive school management system designed for the digital age.",
-      image: "/2149507650.jpg",
-      primaryCTA: "Start Free Trial",
-      secondaryCTA: "Book Demo",
+      badge: "Premium Salon Services",
+      title: ["Discover", "Your", "Perfect Look"],
+      description: "Book top-rated salons & stylists near you",
+      image: "/assets/salon-hero-1.jpg",
+      primaryCTA: "Browse Salons",
+      secondaryCTA: "Learn More",
       stats: ["99.9% Uptime", "24/7 Support", "Easy Setup"],
     },
     {
       id: 2,
-      badge: "Academic Excellence",
-      title: ["Complete", "Learning", "Platform"],
-      description:
-        "Empower teachers and students with powerful tools for seamless classroom management, assignments, and assessments.",
-      image: "/students-learning-robotics-ai-lab.jpg",
-      primaryCTA: "Start Free Trial",
-      secondaryCTA: "Book Demo",
+      badge: "Luxury Treatments",
+      title: ["Premium", "Hair", "Treatments"],
+      description: "Book premium hair treatments from top-rated stylists",
+      image: "/assets/salon-hero-2.jpg",
+      primaryCTA: "Browse Salons",
+      secondaryCTA: "Learn More",
       stats: ["All-in-One", "Cloud-Based", "Mobile Ready"],
     },
     {
       id: 3,
-      badge: "Smart Analytics",
-      title: ["Data-Driven", "Education", "Insights"],
-      description:
-        "Make informed decisions with comprehensive analytics and reporting tools that track student progress and institutional performance.",
+      badge: "Expert Beauty Professionals",
+      title: ["Spa", "Wellness", "Services"],
+      description: "Relax, rejuvenate, and refresh",
       image: "/school-management-dashboard.png",
-      primaryCTA: "Start Free Trial",
-      secondaryCTA: "Book Demo",
+      primaryCTA: "Browse Salons",
+      secondaryCTA: "Learn More",
       stats: ["Real-time Data", "Custom Reports", "Easy Export"],
     },
   ];
@@ -154,18 +151,18 @@ export default function Hero() {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-gray-100/60 to-gray-200/60 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-pink-100/60 to-pink-200/60 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-gray-200/40 to-gray-300/40 rounded-full blur-3xl animate-pulse"
+          className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-pink-200/40 to-pink-300/40 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-to-r from-gray-300/50 to-gray-200/50 rounded-full blur-3xl animate-pulse"
+          className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-to-r from-pink-300/50 to-pink-200/50 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
 
         <div
-          className="absolute w-96 h-96 bg-gradient-to-r from-gray-100/20 to-gray-200/20 rounded-full blur-3xl pointer-events-none transition-all duration-1000 ease-out"
+          className="absolute w-96 h-96 bg-gradient-to-r from-pink-100/20 to-pink-200/20 rounded-full blur-3xl pointer-events-none transition-all duration-1000 ease-out"
           style={{
             left: mousePosition.x - 192,
             top: mousePosition.y - 192,
@@ -175,39 +172,41 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container  mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center">
           {/* Left Side - Content with Fade Transitions */}
           <div className="space-y-8 relative order-2 lg:order-1">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
-                className={`${index === currentSlide
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-                  } transition-all duration-700 ease-out space-y-6 ${index !== currentSlide
+                className={`${
+                  index === currentSlide
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                } transition-all duration-700 ease-out space-y-6 ${
+                  index !== currentSlide
                     ? "absolute inset-0 pointer-events-none"
                     : ""
-                  }`}
+                }`}
               >
                 <div className="relative inline-block">
-                  <Badge className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 text-gray-700 shadow-sm">
+                  <Badge className="bg-gradient-to-r from-pink-50 to-pink-100 border border-pink-200 text-pink-700 shadow-sm">
                     <Sparkles
-                      className="w-4 h-4 mr-2 text-gray-500 animate-spin"
+                      className="w-4 h-4 mr-2 text-pink-500 animate-spin"
                       style={{ animationDuration: "3s" }}
                     />
                     {slide.badge}
                   </Badge>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-gray-200/30 to-gray-300/30 rounded-full blur opacity-60 animate-pulse"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-pink-200/30 to-pink-300/30 rounded-full blur opacity-60 animate-pulse"></div>
                 </div>
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight">
-                  <span className="block bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-pink-900 via-pink-700 to-pink-900 bg-clip-text text-transparent">
                     {slide.title[0]}
                   </span>
-                  <span className="block bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-pink-800 via-pink-600 to-pink-800 bg-clip-text text-transparent">
                     {slide.title[1]}
                   </span>
-                  <span className="block bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-pink-900 via-pink-700 to-pink-900 bg-clip-text text-transparent">
                     {slide.title[2]}
                   </span>
                 </h1>
@@ -239,7 +238,7 @@ export default function Hero() {
                 <div className="flex flex-wrap items-center gap-6 text-sm text-slate-600">
                   {slide.stats.map((stat, statIndex) => (
                     <div key={statIndex} className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      <CheckCircle className="h-5 w-5 text-pink-500 mr-2" />
                       <span className="font-medium">{stat}</span>
                     </div>
                   ))}
@@ -254,10 +253,11 @@ export default function Hero() {
               {slides.map((slide, index) => (
                 <div
                   key={slide.id}
-                  className={`absolute inset-0 transition-all duration-1000 ${index === currentSlide
-                    ? "opacity-100 scale-100"
-                    : "opacity-0 scale-105"
-                    }`}
+                  className={`absolute inset-0 transition-all duration-1000 ${
+                    index === currentSlide
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-105"
+                  }`}
                 >
                   <Image
                     src={slide.image}
@@ -272,7 +272,7 @@ export default function Hero() {
             </div>
 
             <div
-              className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-gray-500 to-gray-800 rounded-full opacity-80 animate-bounce"
+              className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-800 rounded-full opacity-80 animate-bounce"
               style={{ animationDelay: "0.5s" }}
             ></div>
             {/* <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full opacity-60 animate-bounce" style={{ animationDelay: '1.5s' }}></div> */}
@@ -284,10 +284,11 @@ export default function Hero() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`banner-dots h-2 rounded-full transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 ${index === currentSlide
-                ? "bg-gradient-to-r from-gray-600 to-gray-800 w-10 shadow-lg"
-                : "bg-slate-300 hover:bg-slate-400 w-3"
-                }`}
+              className={`banner-dots h-2 rounded-full transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 ${
+                index === currentSlide
+                  ? "bg-gradient-to-r from-pink-600 to-pink-800 w-10 shadow-lg"
+                  : "bg-slate-300 hover:bg-slate-400 w-3"
+              }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
@@ -312,6 +313,44 @@ export default function Hero() {
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
+
+      {/* Features Section */}
+      <section className="container mx-auto px-4 pt-16 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl mb-4 flex items-center justify-center">
+              <Sparkles className="w-6 h-6 text-white" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Find Your Perfect Salon</h3>
+            <p className="text-muted-foreground">
+              Browse through thousands of verified salons and beauty professionals
+              in your area.
+            </p>
+          </div>
+
+          <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl mb-4 flex items-center justify-center">
+              <Sparkles className="w-6 h-6 text-white" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Easy Booking System</h3>
+            <p className="text-muted-foreground">
+              Book appointments instantly with real-time availability and instant
+              confirmation.
+            </p>
+          </div>
+
+          <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl mb-4 flex items-center justify-center">
+              <Sparkles className="w-6 h-6 text-white" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Grow Your Business</h3>
+            <p className="text-muted-foreground">
+              List your salon and reach thousands of potential clients actively
+              searching for services.
+            </p>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
