@@ -7,6 +7,7 @@ import Link from "next/link"
 import {Target, Lightbulb, Eye, Heart } from "lucide-react"
 import type { Metadata } from "next"
 import ClientLogosSlider from "@/components/ClientLogosSlider";
+import { Testimonials } from "@/components/testimonials";
 
 export const metadata: Metadata = {
   title: "About Us - School for Schools",
@@ -109,8 +110,8 @@ export default function About() {
     </div>
         </div>
       </section>
-
-      <section className="py-20 bg-background">
+  <ClientLogosSlider />
+      <section className="pb-20 bg-background">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink-900">Our Story</h2>
@@ -227,9 +228,9 @@ We understand the challenges of running a modern salon — from bookings to clie
       <section className="py-20 bg-background">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative h-[500px] rounded-lg shadow-2xl overflow-hidden ">
               <Image
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=800&fit=crop"
+                src="/assets/hero-salon-1.jpg"
                 alt="Team collaboration"
                 fill
                 className="object-cover"
@@ -266,7 +267,7 @@ We understand the challenges of running a modern salon — from bookings to clie
             {leaders.map((leader, index) => (
               <Card
                 key={index}
-                className="p-6 text-center hover:shadow-[8px_8px_0_0_#000] transition-all hover:-translate-y-1 animate-fade-in-up"
+                className="p-6 text-center hover:shadow-[8px_8px_0_0_#831843] transition-all hover:-translate-y-1 animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-20 h-20 text-white rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold ">
@@ -322,7 +323,10 @@ We understand the challenges of running a modern salon — from bookings to clie
           </div>
         </div>
       </section> */}
-      <ClientLogosSlider />
+    
+      {/* Testimonials */}
+      <Testimonials />
+
       <Footer />
     </div>
   )

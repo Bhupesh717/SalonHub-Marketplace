@@ -176,9 +176,9 @@ export default function Home() {
           </Button>
               </Link>
             </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative h-[400px]  overflow-hidden ">
               <Image
-                src="/assets/hero-salon-1.jpg"
+                src="/assets/78804.png"
                 alt="Salon"
                 width={400}
                 height={400}

@@ -44,22 +44,18 @@ export const Footer: React.FC<FooterProps> = () => {
                                 <Link href="/" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
                                     Home
                                 </Link>
-                            </li>
+                            </li>                            
+                            
                             <li>
                                 <Link href="/about" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
                                     About Us
                                 </Link>
-                            </li>
+                            </li>   
                             <li>
-                                <Link href="/erp" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
-                                    ERP App
+                                <Link href="/contact" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
+                                    Contact Us
                                 </Link>
-                            </li>
-                            <li>
-                                <Link href="/tinkertek" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
-                                    TinkerTek Labs
-                                </Link>
-                            </li>
+                            </li>                        
                         </ul>
                     </div>
 
@@ -68,25 +64,20 @@ export const Footer: React.FC<FooterProps> = () => {
                         <h3 className="font-semibold mb-4">Resources</h3>
                         <ul className="space-y-2 text-sm">
                             <li>
-                                <Link href="/blog" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
-                                    Blog & Articles
+                                <Link href="/salons" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
+                                    Salons
                                 </Link>
-                            </li>
-                            <li>
-                                <Link href="/case-studies" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
-                                    Case Studies
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/careers" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
-                                    Careers
-                                </Link>
-                            </li>
+                            </li>                    
                             <li>
                                 <Link href="/services" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
                                     Services
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/blog" className="hover:opacity-80 transition-opacity text-white hover:text-gray-400">
+                                    Blog & Articles
+                                </Link>
+                            </li>   
                         </ul>
                     </div>
 
