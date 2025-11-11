@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, User } from "lucide-react";
-import backgroundImage from "@/public/school-management-dashboard.png";
+import backgroundImage from "@/public/assets/9292964_2913.jpg";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -26,57 +26,57 @@ interface BlogPost {
 const samplePosts: BlogPost[] = [
   {
     id: "1",
-    title: "Digital Transformation in Schools: A Complete Guide",
+    title: "Digital Transformation in Salons: A Complete Guide",
     excerpt:
-      "Explore how schools can leverage ERP systems and AI tools to streamline operations and enhance learning experiences.",
+      "Explore how modern salons can use all-in-one management platforms to streamline operations, attract more clients, and grow revenue effortlessly.",
     date: "October 15, 2025",
     readTime: "8 min read",
-    author: "Dr. Priya Sharma",
-    image: "/modern-classroom-tech.png",
-    category: "Education Tech",
-    slug: "digital-transformation-schools-guide",
-    url: "/blog/digital-transformation-schools-guide",
+    author: "Sonia Mehta",
+    image: "/assets/78804.png",
+    category: "Salon Tech",
+    slug: "digital-transformation-salons-guide",
+    url: "/blog/digital-transformation-salons-guide",
   },
   {
     id: "2",
-    title: "How AI is Revolutionizing Student Learning",
+    title: "How Automation Is Changing the Beauty Industry",
     excerpt:
-      "Discover the impact of AI-powered labs on student engagement and future-ready skills development.",
+      "Discover how AI, automation, and smart scheduling tools are helping salons save time, boost client satisfaction, and grow faster.",
     date: "October 10, 2025",
     readTime: "6 min read",
-    author: "Rajesh Kumar",
+    author: "Rahul Verma",
     image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop",
-    category: "AI & Innovation",
-    slug: "ai-revolutionizing-student-learning",
-    url: "/blog/ai-revolutionizing-student-learning",
+      "/assets/78804.png",
+    category: "Innovation",
+    slug: "automation-changing-beauty-industry",
+    url: "/blog/automation-changing-beauty-industry",
   },
   {
     id: "3",
-    title: "Building Robotics Labs: Best Practices for Schools",
+    title: "Building a Loyal Client Base: Proven Salon Strategies",
     excerpt:
-      "Step-by-step guide to setting up TinkerTek Labs for hands-on STEM education.",
+      "A step-by-step guide to improving client retention through personalized experiences, loyalty programs, and consistent branding.",
     date: "October 5, 2025",
     readTime: "10 min read",
-    author: "Ms. Anita Desai",
-    image: "/students-learning-robotics-ai-lab.jpg",
-    category: "STEM Education",
-    slug: "building-robotics-labs-schools",
-    url: "/blog/building-robotics-labs-schools",
+    author: "Anjali Kapoor",
+    image: "/assets/78804.png",
+    category: "Business Growth",
+    slug: "building-loyal-client-base",
+    url: "/blog/building-loyal-client-base",
   },
   {
     id: "4",
-    title: "The Role of ERP in Modern School Management",
+    title: "The Power of Data in Salon Management",
     excerpt:
-      "How integrated ERP solutions can reduce administrative burdens by up to 50%.",
+      "Learn how insights and analytics can transform salon operations — from tracking performance to understanding customer behavior.",
     date: "September 28, 2025",
     readTime: "7 min read",
-    author: "Finance Head, Modern School",
+    author: "Vikram Singh",
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
-    category: "School Management",
-    slug: "erp-modern-school-management",
-    url: "/blog/erp-modern-school-management",
+      "/assets/78804.png",
+    category: "Analytics",
+    slug: "power-of-data-in-salon-management",
+    url: "/blog/power-of-data-in-salon-management",
   },
 ];
 
@@ -102,15 +102,16 @@ export default function BlogClient() {
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/20" style={{ backgroundImage: "radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))" }} />
         </div>
 
         <div className="container relative z-10 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wider">
-            Blog & Articles
+            Blog & Insights
           </h1>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Latest insights on education technology, school management, and innovation in STEM.
+            Latest trends, success stories, and strategies in salon management,
+            technology, and business growth.
           </p>
         </div>
       </section>
@@ -140,7 +141,7 @@ export default function BlogClient() {
             {filteredPosts.map((post) => (
               <Card
                 key={post.id}
-                className="overflow-hidden hover:shadow-[8px_8px_0_0_#000] transition-all hover:-translate-y-1 border border-border"
+                className="overflow-hidden hover:shadow-[8px_8px_0_0_#831843] transition-all hover:-translate-y-1 border border-border"
               >
                 <div className="relative overflow-hidden">
                   <Image
@@ -165,20 +166,20 @@ export default function BlogClient() {
                       {post.readTime}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3 hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-pink-900 mb-3 hover:text-pink-500 transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-muted-foreground mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center gap-2 mb-4">
-                    <User size={16} className="text-muted-foreground" />
+                    <User size={16} className="text-pink-900" />
                     <span className="text-sm text-foreground">{post.author}</span>
                   </div>
                   <Button
                     variant="outline"
                     asChild
-                    className="w-full text-black border-2 border-black hover:bg-black hover:text-white transition-colors"
+                    className="w-full text-pink-900 border-2 border-pink-900 hover:bg-pink-900 hover:text-white transition-colors"
                   >
                     <Link href={`/blog/${post.slug}`}>Read More</Link>
                   </Button>
@@ -192,7 +193,7 @@ export default function BlogClient() {
             <Button variant="outline" asChild>
               <Link
                 href="/blog?page=2"
-                className="text-gray-900 hover:text-black hover:border hover:border-black transition-colors"
+                className="text-pink-900 hover:text-pink-900 hover:border hover:border-pink-900 transition-colors"
               >
                 Load More Articles
               </Link>
@@ -202,21 +203,22 @@ export default function BlogClient() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-black text-white">
+      <section className="py-16 md:py-24 bg-pink-50 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Subscribe to Our Newsletter
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink-900">
+            Join the GlamSync Community
           </h2>
-          <p className="text-lg opacity-90 mb-8">
-            Get the latest updates, insights, and resources delivered to your inbox.
+          <p className="text-lg opacity-90 mb-8 text-pink-900">
+            Get the latest salon business tips, growth hacks, and industry
+            insights delivered straight to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto items-center">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-600"
+              className="flex-1 px-4 py-3 rounded-lg border border-pink-900 bg-white text-pink-900 focus:border-pink-900 outline-none focus:ring-2 focus:ring-pink-900 placeholder-gray-600"
             />
-            <Button className="bg-white text-black hover:bg-gray-100">
+            <Button className="bg-pink-900 text-white hover:bg-pink-900 hover:text-white hover:border hover:border-pink-900">
               Subscribe
             </Button>
           </div>

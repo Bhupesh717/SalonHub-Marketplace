@@ -27,79 +27,161 @@ interface BlogPost {
 }
 
 const samplePosts: Record<string, BlogPost> = {
-  "digital-transformation-schools-guide": {
+   "digital-transformation-salons-guide": {
     id: "1",
-    title: "Digital Transformation in Schools: A Complete Guide",
-    excerpt: "Explore how schools can leverage ERP systems and AI tools to streamline operations and enhance learning experiences.",
+    title: "Digital Transformation in Salons: A Complete Guide",
+    excerpt:
+      "Discover how modern salons are embracing technology to streamline operations, improve customer experience, and boost revenue.",
     content: `
-      <h2>Introduction to Digital Transformation</h2>
-      <p>Digital transformation is no longer a buzzword—it's a necessity for modern schools. With the rapid evolution of technology, educational institutions must adapt to stay competitive and provide the best learning environments.</p>
-      
-      <h2>The Role of ERP Systems</h2>
-      <p>Enterprise Resource Planning (ERP) systems integrate various school functions into a single platform. From admissions to fee management, ERP reduces administrative burdens and allows educators to focus on teaching.</p>
-      
+      <h2>Introduction</h2>
+      <p>In today’s fast-paced beauty industry, technology is no longer a luxury — it’s a necessity. From online bookings to AI-driven client insights, digital transformation helps salons stay competitive and efficient.</p>
+
+      <h2>Why Digital Transformation Matters</h2>
+      <p>Clients expect convenience, personalization, and instant access. Modern salon software enables owners to meet these expectations with ease.</p>
+
       <ul>
-        <li>Streamlined admissions process</li>
-        <li>Real-time attendance tracking</li>
-        <li>Automated grading and reporting</li>
+        <li>Automated appointment scheduling</li>
+        <li>Inventory tracking and supplier integration</li>
+        <li>Personalized marketing campaigns</li>
       </ul>
-      
-      <h2>Integrating AI and Robotics</h2>
-      <p>AI-powered tools like chatbots and personalized learning platforms are revolutionizing student engagement. Combined with robotics labs, they prepare students for future careers in STEM fields.</p>
-      
+
+      <h2>Key Areas of Transformation</h2>
+      <p>Automation tools, client relationship systems, and real-time data dashboards empower salon owners to make smarter business decisions.</p>
+
       <blockquote>
-        <p>"Technology doesn't replace teachers; it empowers them to teach better." — Anonymous Educator</p>
+        <p>"The future of beauty is digital — and it starts with smart salon management."</p>
       </blockquote>
-      
-      <h2>Challenges and Solutions</h2>
-      <p>While implementation can be daunting, starting small with pilot programs ensures smooth adoption. Training staff and involving stakeholders early leads to higher success rates.</p>
-      
+
+      <h2>How to Get Started</h2>
+      <p>Begin with small steps: introduce digital bookings, use cloud-based billing, and collect client feedback through digital forms. Gradual adoption ensures smoother transitions for your team.</p>
+
       <h2>Conclusion</h2>
-      <p>Embracing digital transformation positions schools as leaders in education. Contact us to start your journey today.</p>
+      <p>Salons that embrace digital transformation gain happier clients, improved operations, and a competitive edge. It’s time to bring your salon into the future.</p>
     `,
-    date: "October 15, 2025",
-    readTime: "8 min read",
-    author: "Dr. Priya Sharma",
-    authorBio: "Head of Educational Innovation at TinkerTek Labs, with 15+ years in edtech research.",
-    image: "/modern-classroom-tech.png",
-    category: "Education Tech",
-    slug: "digital-transformation-schools-guide",
-    tags: ["ERP", "Digital Transformation", "School Management"],
+    date: "November 11, 2025",
+    readTime: "7 min read",
+    author: "Aarav Kapoor",
+    authorBio: "Salon technology consultant helping beauty brands go digital.",
+    image: "/blog/digital-salon-transformation.jpg",
+    category: "Salon Tech",
+    slug: "digital-transformation-in-salons",
+    tags: ["Digital", "Automation", "Salon Software"],
   },
-  "ai-revolutionizing-student-learning": {
+
+  "automation-changing-beauty-industry": {
     id: "2",
-    title: "How AI is Revolutionizing Student Learning",
-    excerpt: "Discover the impact of AI-powered labs on student engagement and future-ready skills development.",
+    title: "How Automation Is Changing the Beauty Industry",
+    excerpt:
+      "From smart booking systems to AI-driven marketing, automation is redefining how beauty businesses operate and grow.",
     content: `
-      <h2>The Dawn of AI in Education</h2>
-      <p>Artificial Intelligence is transforming classrooms from passive learning spaces to dynamic, interactive environments tailored to individual needs.</p>
-      
-      <h2>Personalized Learning Paths</h2>
-      <p>AI algorithms analyze student performance to create customized lesson plans, ensuring no child is left behind.</p>
-      
-      <h2>Hands-On AI Labs</h2>
-      <p>With TinkerTek Labs, students build and program AI models, fostering creativity and problem-solving skills essential for the 21st century.</p>
-      
+      <h2>Introduction</h2>
+      <p>Automation is reshaping every corner of the beauty world. With the right tools, salon owners can save time, reduce costs, and deliver a better client experience.</p>
+
+      <h2>Smart Booking & Scheduling</h2>
+      <p>No more double bookings or missed appointments. Automated systems handle reminders, reschedules, and confirmations — freeing up your staff’s time.</p>
+
+      <h2>Client Retention Through AI</h2>
+      <p>AI tools analyze client habits, predict booking trends, and even suggest personalized service recommendations. This creates a unique, data-backed customer journey.</p>
+
+      <h2>Inventory & Staff Management</h2>
       <ul>
-        <li>Interactive coding challenges</li>
-        <li>Real-world data analysis</li>
-        <li>Collaborative AI projects</li>
+        <li>Track products in real-time</li>
+        <li>Set alerts for low stock</li>
+        <li>Optimize staff schedules automatically</li>
       </ul>
-      
-      <h2>Measuring Impact</h2>
-      <p>Studies show a 30% increase in retention rates and improved critical thinking when AI is integrated thoughtfully.</p>
-      
-      <h2>Future Outlook</h2>
-      <p>As AI evolves, so will education. Schools adopting these tools today will shape tomorrow's innovators.</p>
+
+      <blockquote>
+        <p>"Automation isn’t about replacing people — it’s about empowering them to focus on what they do best."</p>
+      </blockquote>
+
+      <h2>Conclusion</h2>
+      <p>From front desk operations to marketing, automation makes running a salon smoother, faster, and more client-focused. It’s the secret weapon of modern beauty businesses.</p>
     `,
-    date: "October 10, 2025",
+    date: "November 8, 2025",
     readTime: "6 min read",
-    author: "Rajesh Kumar",
-    authorBio: "AI Specialist at TinkerTek Labs, passionate about ethical AI in education.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop",
-    category: "AI & Innovation",
-    slug: "ai-revolutionizing-student-learning",
-    tags: ["AI", "Student Engagement", "Personalized Learning"],
+    author: "Simran Joshi",
+    authorBio: "Beauty industry strategist and salon automation expert.",
+    image: "/blog/automation-in-salons.jpg",
+    category: "Automation",
+    slug: "automation-changing-beauty-industry",
+    tags: ["Automation", "AI", "Salon Growth"],
+  },
+
+  "building-loyal-client-base": {
+    id: "3",
+    title: "Building a Loyal Client Base: Proven Salon Strategies",
+    excerpt:
+      "Client loyalty is the heart of any successful salon. Learn how to turn first-time visitors into lifelong clients with trust, care, and smart engagement.",
+    content: `
+      <h2>Introduction</h2>
+      <p>In the salon business, retention beats acquisition. Loyal clients not only return frequently but also become your biggest promoters. Let’s explore proven methods to build lasting relationships.</p>
+
+      <h2>1. Personalization Is Key</h2>
+      <p>Use client data to remember preferences — from favorite stylists to preferred treatments. A personalized experience shows that you truly care.</p>
+
+      <h2>2. Loyalty Programs That Work</h2>
+      <p>Reward repeat visits with discounts, exclusive offers, or free add-on services. Automated systems make loyalty tracking seamless.</p>
+
+      <h2>3. Consistent Communication</h2>
+      <p>Send gentle reminders, festive greetings, and product tips. Clients love thoughtful engagement that isn’t overly promotional.</p>
+
+      <blockquote>
+        <p>"Loyal clients don’t just love your services — they trust your brand."</p>
+      </blockquote>
+
+      <h2>4. Ask for Feedback</h2>
+      <p>Encourage honest reviews and take action. Responding to feedback publicly builds credibility and shows you value improvement.</p>
+
+      <h2>Conclusion</h2>
+      <p>With genuine care, smart tools, and consistent service, your salon can turn every client visit into a relationship that lasts for years.</p>
+    `,
+    date: "November 5, 2025",
+    readTime: "7 min read",
+    author: "Rhea Nair",
+    authorBio: "Salon marketing specialist and client experience coach.",
+    image: "/blog/building-loyal-salon-clients.jpg",
+    category: "Salon Growth",
+    slug: "building-loyal-client-base",
+    tags: ["Client Retention", "Salon Marketing", "Loyalty"],
+  },
+
+  "power-of-data-in-salon-management": {
+    id: "4",
+    title: "The Power of Data in Salon Management",
+    excerpt:
+      "Learn how data-driven insights can help your salon grow smarter, predict trends, and improve profitability.",
+    content: `
+      <h2>Introduction</h2>
+      <p>Every salon generates data — from bookings to product sales. The question is, how do you use it to grow your business? That’s where data-driven management comes in.</p>
+
+      <h2>Understanding Your Clients</h2>
+      <p>Analyzing booking patterns, service frequency, and preferred treatments helps you tailor offerings to each client segment.</p>
+
+      <h2>Boosting Profitability with Analytics</h2>
+      <ul>
+        <li>Identify top-performing stylists</li>
+        <li>Track inventory turnover</li>
+        <li>Forecast peak hours for better staffing</li>
+      </ul>
+
+      <h2>Predicting Future Trends</h2>
+      <p>Data helps salons spot upcoming beauty trends early. From new color styles to popular treatments, predictive insights keep you ahead of the curve.</p>
+
+      <blockquote>
+        <p>"Data is the new beauty secret — it reveals what your business truly needs."</p>
+      </blockquote>
+
+      <h2>Conclusion</h2>
+      <p>Using data strategically turns guesswork into growth. With the right tools, your salon can operate smarter, serve better, and grow faster.</p>
+    `,
+    date: "November 2, 2025",
+    readTime: "6 min read",
+    author: "Tanvi Deshmukh",
+    authorBio: "Business analyst and salon software consultant.",
+    image: "/blog/salon-data-management.jpg",
+    category: "Salon Insights",
+    slug: "power-of-data-in-salon-management",
+    tags: ["Salon Analytics", "Data Insights", "Management"],
   },
 };
 
@@ -183,7 +265,7 @@ export default function BlogPost({ params }: Props) {
                 Back to Blog
               </Link>
             </Button>
-            <Button variant="outline" size="sm" className="gap-2">
+            <Button variant="default" size="lg" className="gap-2">
               <Share2 size={16} />
               Share
             </Button>
