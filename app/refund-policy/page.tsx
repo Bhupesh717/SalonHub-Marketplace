@@ -42,29 +42,36 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "Overview",
-    content: "TinkerTek Labs offers refunds for eligible purchases within our policy guidelines. This ensures fair treatment for schools and educators using our edtech services. Effective: October 28, 2025.",
+    content:
+      "At GlamSync, we strive to ensure customer satisfaction with every subscription and service. Our Refund Policy is designed to provide clarity and fairness for all salon owners and professionals using our platform. Effective: November 11, 2025.",
   },
   {
     title: "Eligibility for Refunds",
-    content: "Refunds available for subscriptions canceled within 14 days of purchase (cooling-off period). Custom implementations or used credits are non-refundable. Damaged hardware: Full refund if reported within 7 days.",
+    content:
+      "Refunds are available for subscriptions canceled within 14 days of purchase (cooling-off period). Once premium features, credits, or integrations have been used, refunds are no longer applicable. For hardware or POS devices, a full refund may be issued if reported defective within 7 days of delivery.",
   },
   {
     title: "Refund Process",
-    content: "Submit requests via support@tinkerteklabs.com with order details. We review within 5 business days and process via original payment method (3-10 days). Partial refunds for prorated subscriptions.",
+    content:
+      "To request a refund, contact us at support@glamsync.com with your order or subscription details. Our team will review your request within 5 business days. Approved refunds will be processed via the original payment method within 3–10 business days. Partial refunds may apply for prorated subscription periods.",
   },
   {
     title: "Non-Refundable Items",
-    content: "Digital downloads, custom AI models, and training sessions are non-refundable once delivered. No refunds after 30 days of active use.",
+    content:
+      "Digital products, add-ons, or setup and training services are non-refundable once delivered. No refunds are provided after 30 days of active account usage or for renewals already processed.",
   },
   {
     title: "Disputes",
-    content: "We aim to resolve issues amicably. For unresolved cases, contact us before escalating to payment providers.",
+    content:
+      "We’re committed to resolving issues amicably. If you experience a billing or service concern, please contact our support team before initiating a dispute with your payment provider.",
   },
   {
     title: "Changes to Policy",
-    content: "We may update this policy; notifications sent via email for subscribers.",
+    content:
+      "We may update this Refund Policy periodically to reflect service or regulatory updates. Any changes will be posted here, and subscribers will be notified via email when applicable.",
   },
-];
+]
+
 
 export default function RefundPage() {
   return (
@@ -90,14 +97,14 @@ export default function RefundPage() {
           <Badge variant="outline" className="mb-4 inline-block">
             Legal
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-[1.15]">
+          <h1 className="text-4xl md:text-5xl font-bold text-pink-900 mb-6 leading-[1.15]">
             Refund Policy
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             Transparent refunds to support your educational journey.
           </p>
           <div className="flex justify-center">
-            <ArrowLeftRight className="h-12 w-12 text-primary/60" />
+            <ArrowLeftRight className="h-12 w-12 text-primary" />
           </div>
         </div>
       </section>
@@ -107,7 +114,7 @@ export default function RefundPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-8">
           {sections.map((section, index) => (
             <Card key={index} className="p-6 border-border">
-              <h2 className="text-2xl font-bold text-foreground mb-4">{section.title}</h2>
+              <h2 className="text-2xl font-bold text-pink-900 mb-4">{section.title}</h2>
               <p className="text-foreground/80 leading-relaxed text-[16px]">{section.content}</p>
             </Card>
           ))}

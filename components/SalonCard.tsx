@@ -1,9 +1,11 @@
-import React from 'react';
-import { Star, MapPin, Phone, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import { Button } from './ui/button';
+import React from "react";
+import { Star, MapPin, Phone, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 interface SalonCardProps {
+  id: string | number;   
   imageSrc: string;
   rating: number;
   name: string;
@@ -13,6 +15,7 @@ interface SalonCardProps {
 }
 
 const SalonCard: React.FC<SalonCardProps> = ({
+  id,
   imageSrc,
   rating,
   name,
@@ -27,10 +30,17 @@ const SalonCard: React.FC<SalonCardProps> = ({
     return (
       <div className="flex items-center gap-0.5">
         {[...Array(fullStars)].map((_, i) => (
-          <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+          <Star
+            key={i}
+            className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400"
+          />
         ))}
-        {hasHalfStar && <Star className="w-3.5 h-3.5 fill-yellow-400/50 text-yellow-400" />}
-        <span className="ml-1.5 text-sm font-semibold text-gray-700">{rating.toFixed(1)}</span>
+        {hasHalfStar && (
+          <Star className="w-3.5 h-3.5 fill-yellow-400/50 text-yellow-400" />
+        )}
+        <span className="ml-1.5 text-sm font-semibold text-gray-700">
+          {rating.toFixed(1)}
+        </span>
       </div>
     );
   };
@@ -45,10 +55,10 @@ const SalonCard: React.FC<SalonCardProps> = ({
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        
+
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
+
         {/* Rating Badge */}
         <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-2 rounded-full shadow-lg">
           {renderStars()}
@@ -75,8 +85,8 @@ const SalonCard: React.FC<SalonCardProps> = ({
             </div>
 
             <div className="flex items-center gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0">
-                <Phone className="w-3 h-3 text-purple-600" />
+              <div className="w-5 h-5 rounded-full bg-pink-50 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-3 h-3 text-pink-600" />
               </div>
               <p className="text-sm font-medium text-gray-700">{phone}</p>
             </div>
@@ -85,13 +95,18 @@ const SalonCard: React.FC<SalonCardProps> = ({
 
         {/* Action Buttons */}
         <div className="flex gap-3 pt-4 border-t border-gray-100">
-          <Button className="flex-1 px-4 py-2 border-2 text-white border-gray-200 rounded-xl font-medium hover:border-pink-500 hover:text-pink-500 hover:bg-pink-50 transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5 group/btn">
+         <Link className="flex-1" href={`/salons/${id}`}>
+         <Button className="w-full px-4 py-2 border-2 text-white border-gray-200 rounded-xl font-medium hover:border-pink-500 hover:text-pink-500 hover:bg-pink-50 transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5 group/btn">
             Details
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
           </Button>
-          <Button className="flex-1 px-4 py-2   rounded-xl font-medium border-pink-500 text-pink-500 bg-pink-50 hover:border-pink-800 hover:text-white hover:bg-primary hover:shadow-lg hover:shadow-pink-500/50 hover:-translate-y-0.5 transition-all duration-300">
-            Book Now
-          </Button>        </div>
+          </Link>
+          <Link className="flex-1" href={`/booking`}>
+            <Button className="w-full px-4 py-2   rounded-xl font-medium border-pink-500 text-pink-500 bg-pink-50 hover:border-pink-800 hover:text-white hover:bg-primary hover:shadow-lg hover:shadow-pink-500/50 hover:-translate-y-0.5 transition-all duration-300">
+              Book Now
+            </Button>
+          </Link>{" "}
+        </div>
       </div>
     </div>
   );

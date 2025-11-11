@@ -9,77 +9,78 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 interface Testimonial {
   name: string
   role: string
-  school: string
+  salon: string
   content: string
   rating: number
 }
 
 const testimonials: Testimonial[] = [
   {
-    name: "Dr. Rajesh Kumar",
-    role: "Principal",
-    school: "Delhi Public School",
+    name: "Ms. Riya Kapoor",
+    role: "Owner",
+    salon: "Glow & Grace Salon",
     content:
-      "School for Schools has transformed how we manage our operations. The ERP system is intuitive and has reduced administrative burden significantly.",
+      "SalonPro Suite has completely streamlined our appointments and billing. Managing clients is now effortless, and productivity has improved greatly.",
     rating: 5,
   },
   {
-    name: "Ms. Priya Sharma",
-    role: "Head of Innovation",
-    school: "Mumbai International School",
+    name: "Mr. Karan Mehta",
+    role: "Creative Director",
+    salon: "Style Studio Mumbai",
     content:
-      "TinkerTek Labs has inspired our students to think creatively. The AI and robotics programs are engaging and educational.",
+      "The marketing tools helped us attract new clients and retain loyal ones. The digital loyalty program is a big hit with our customers!",
     rating: 5,
   },
   {
-    name: "Mr. Arun Patel",
-    role: "IT Director",
-    school: "Bangalore Academy",
+    name: "Ms. Neha Bansal",
+    role: "Manager",
+    salon: "Luxe Look Salon & Spa",
     content:
-      "The support team is exceptional. They helped us implement the system smoothly without any disruption to our daily operations.",
+      "Their support team is outstanding. They guided us through setup and training, making the entire transition smooth and stress-free.",
     rating: 5,
   },
   {
-    name: "Ms. Anjali Verma",
-    role: "Vice Principal",
-    school: "Chennai Global School",
+    name: "Mr. Rohit Sharma",
+    role: "Franchise Owner",
+    salon: "Urban Chic Beauty Lounge",
     content:
-      "Outstanding platform! The student management features have streamlined our enrollment process and improved communication with parents.",
+      "An exceptional platform! The staff scheduling and client reminder features have reduced no-shows and improved our daily operations.",
     rating: 5,
   },
   {
-    name: "Mr. Vikram Singh",
-    role: "Academic Coordinator",
-    school: "Pune Excellence Academy",
+    name: "Ms. Meera Joshi",
+    role: "Senior Stylist",
+    salon: "Bliss Hair & Beauty",
     content:
-      "The analytics dashboard provides valuable insights into student performance. It helps us identify areas for improvement quickly.",
+      "The client history tracking feature is a game changer. It helps us personalize services and provide a premium experience every time.",
     rating: 5,
   },
   {
-    name: "Dr. Neha Gupta",
-    role: "Director",
-    school: "Kolkata International",
+    name: "Dr. Nidhi Verma",
+    role: "Founder",
+    salon: "SkinLab Aesthetics",
     content:
-      "Implementing this system was the best decision we made. Our administrative efficiency has increased by 40% in just three months.",
+      "Implementing this system was one of our best decisions. Our operational efficiency has increased by 45% within a few months.",
     rating: 5,
   },
   {
-    name: "Mr. Suresh Reddy",
+    name: "Mr. Arjun Reddy",
     role: "Finance Manager",
-    school: "Hyderabad Central School",
+    salon: "Elegance Salon Hyderabad",
     content:
-      "The financial management module is comprehensive and user-friendly. It has simplified our accounting processes tremendously.",
+      "The billing and inventory modules are robust and easy to use. Tracking expenses and stock has never been this convenient.",
     rating: 5,
   },
   {
-    name: "Ms. Deepika Nair",
-    role: "Head of Academics",
-    school: "Kochi Modern School",
+    name: "Ms. Kavya Nair",
+    role: "Training Head",
+    salon: "Serene Spa & Salon Kochi",
     content:
-      "The curriculum planning tools are innovative and flexible. Teachers love how easy it is to organize and track learning outcomes.",
+      "The employee performance dashboard gives us clear insights into service quality and sales. It’s an excellent tool for team growth.",
     rating: 5,
   },
-]
+];
+
 
 export function Testimonials() {
   const [api, setApi] = useState<CarouselApi | null>(null)
@@ -121,9 +122,9 @@ export function Testimonials() {
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What Educators Say About Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-pink-900 mb-4">What Our Clients Say About Us</h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Discover how educators and administrators are transforming learning with our solutions.
+           Discover how salon owners and professionals are transforming their businesses with our all-in-one management solutions.
           </p>
         </div>
 
@@ -138,11 +139,11 @@ export function Testimonials() {
             <CarouselContent className="px-4">
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="p-6 sm:p-8 flex flex-col border-2 border-gray-200 bg-white hover:border-black transition-all h-full">
+                  <Card className="p-6 sm:p-8 flex flex-col border-2 border-gray-200 bg-white hover:border-pink-900 transition-all h-full">
                     <div className="flex-grow">
                       <div className="flex gap-1 mb-4">
                         {[...Array(5)].map((_, i) => (
-                          <svg key={i} className="w-5 h-5 text-black fill-current" viewBox="0 0 20 20">
+                          <svg key={i} className="w-5 h-5 text-pink-900 fill-current" viewBox="0 0 20 20">
                             <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                           </svg>
                         ))}
@@ -150,9 +151,9 @@ export function Testimonials() {
                       <p className="text-sm sm:text-base text-gray-700 italic mb-6">"{testimonial.content}"</p>
                     </div>
                     <div className="border-t-2 border-gray-200 pt-4">
-                      <p className="font-semibold text-black">{testimonial.name}</p>
+                      <p className="font-semibold text-pink-900">{testimonial.name}</p>
                       <p className="text-sm text-gray-600">{testimonial.role}</p>
-                      <p className="text-xs text-gray-500 mt-1">{testimonial.school}</p>
+                      <p className="text-xs text-gray-500 mt-1">{testimonial.salon}</p>
                     </div>
                   </Card>
                 </CarouselItem>
@@ -169,7 +170,7 @@ export function Testimonials() {
                       console.error('Error navigating to previous slide:', e)
                     }
                   }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-10 bg-black hover:bg-gray-800 text-white rounded-full p-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-10 bg-primary hover:bg-pink-800 text-white rounded-full p-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
                   aria-label="Previous testimonial"
                 >
                   <ChevronLeft className="w-6 h-6" />
@@ -183,7 +184,7 @@ export function Testimonials() {
                       console.error('Error navigating to next slide:', e)
                     }
                   }}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-10 bg-black hover:bg-gray-800 text-white rounded-full p-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-10 bg-primary hover:bg-pink-800 text-white rounded-full p-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
                   aria-label="Next testimonial"
                 >
                   <ChevronRight className="w-6 h-6" />

@@ -72,29 +72,28 @@ export default function About() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1600&h=900&fit=crop)`,
+            backgroundImage: `url(/assets/3824607_1143.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <div className="container relative z-10 text-center text-white">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 uppercase tracking-wider">
-            About School for Schools
+            About SalonHub Marketplace
           </h1>
           <p className="text-lg md:text-xl text-justify md:text-center text-gray-200 max-w-3xl mx-auto mb-10">
-            We're on a mission to revolutionize education by providing schools with innovative technology solutions
-            that empower educators and inspire students.
+            Our platform empowers salons and spas with innovative technology that simplifies operations, enhances client experiences, and drives business growth.
           </p>
           {/* Stats */}
     {/* Stats with Glass Effect */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 text-center">
       {[
-        { value: "500+", label: "Schools Served" },
-        { value: "50K+", label: "Students Impacted" },
-        { value: "30+", label: "Countries" },
+        { value: "500+", label: "Salons Empowered" },
+        { value: "50K+", label: "Clients Served" },
+
         { value: "98%", label: "Satisfaction Rate" },
       ].map((item, i) => (
         <div
@@ -114,9 +113,10 @@ export default function About() {
       <section className="py-20 bg-background">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink-900">Our Story</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              School for Schools was founded with a simple yet powerful vision: to empower educational institutions with the tools and resources they need to excel in the modern era. We understand the unique challenges schools face, and we're committed to providing solutions that make a real difference.
+             Our journey began with a simple idea — to help salon owners focus on creativity and client satisfaction instead of daily management hassles.
+We understand the challenges of running a modern salon — from bookings to client retention — and we’re here to make it effortless with all-in-one, intelligent solutions.
             </p>
           </div>
 
@@ -126,11 +126,11 @@ export default function About() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Target className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-2xl">Our Mission</CardTitle>
+                <CardTitle className="text-2xl text-pink-900">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  To provide schools with innovative, accessible, and effective tools that enhance learning experiences and streamline operations, enabling educators to focus on what matters most: their students.
+                  To equip salons with accessible, powerful, and easy-to-use tools that streamline operations, elevate customer experiences, and empower every stylist, manager, and owner to grow their business with confidence.
                 </p>
               </CardContent>
             </Card>
@@ -140,29 +140,29 @@ export default function About() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Eye className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-2xl">Our Vision</CardTitle>
+                <CardTitle className="text-2xl text-pink-900">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  To become the leading platform for educational transformation, creating a global community where schools can share best practices, access cutting-edge resources, and inspire the next generation of learners.
+                  To be the leading global platform for salon transformation — a community where professionals can connect, learn, and access technology that helps them thrive in the ever-evolving beauty industry.
                 </p>
               </CardContent>
             </Card>
           </div>
 
           <div className="">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-pink-900">Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card>
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Heart className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>Student-Centric</CardTitle>
+                  <CardTitle className="text-pink-900">Client-Centric</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Every decision we make is guided by what's best for students and their learning journey.
+                    Every feature we design focuses on delivering value to salon owners and enhancing client satisfaction.
                   </p>
                 </CardContent>
               </Card>
@@ -172,11 +172,11 @@ export default function About() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Lightbulb className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>Innovation</CardTitle>
+                  <CardTitle className="text-pink-900"  >Innovation</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    We constantly explore new ways to improve and adapt to the evolving educational landscape.
+                   We constantly explore new ideas and technologies to keep salons ahead of the curve.
                   </p>
                 </CardContent>
               </Card>
@@ -188,12 +188,11 @@ export default function About() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <CardTitle>Collaboration</CardTitle>
+                  <CardTitle className="text-pink-900">Collaboration</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    We believe in the power of working together to achieve greater educational outcomes.
-                  </p>
+                    We believe in growing together — uniting salon professionals, and partners for mutual success.</p>
                 </CardContent>
               </Card>
             </div>
@@ -237,15 +236,15 @@ export default function About() {
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Community</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink-900">Join Our Community</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                When you partner with School for Schools, you're not just getting a platform—you're joining a vibrant community of educators, administrators, and education enthusiasts who are passionate about making a difference.
+                When you partner with us, you’re joining a passionate network of beauty professionals who believe in growth through innovation.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
-                Together, we're building the future of education, one school at a time. Whether you're a small private institution or a large public school district, we have the expertise and resources to help you succeed.
+                Together, we’re shaping the future of the salon industry — one client, one appointment, one success story at a time.
               </p>
               <p className="text-lg text-muted-foreground">
-                Let's transform education together.
+                Let’s transform the beauty business together.
               </p>
             </div>
           </div>
@@ -255,7 +254,7 @@ export default function About() {
       <section className="py-16 md:py-24 bg-gray-100 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-wide text-pink-900">
               Leadership Team
             </h2>
             <p className="text-lg text-gray-600">
@@ -273,8 +272,8 @@ export default function About() {
                 <div className="w-20 h-20 text-white rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold ">
                   <Image src={leader.image} alt={leader.name} width={80} height={80} className="w-full rounded-full" />
                 </div>
-                <h3 className="text-xl font-bold mb-1">{leader.name}</h3>
-                <p className="font-semibold mb-2">{leader.role}</p>
+                <h3 className="text-xl font-bold mb-1 text-pink-900">{leader.name}</h3>
+                <p className="font-semibold mb-2 text-pink-950">{leader.role}</p>
                 <p className="text-gray-600 text-sm mb-4">{leader.bio}</p>
                 {/* <div className="flex gap-3 justify-center">
                   <a
@@ -302,7 +301,7 @@ export default function About() {
       {/* <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-wide text-pink-900  ">
               Partner Schools
             </h2>
             <p className="text-lg text-gray-600">

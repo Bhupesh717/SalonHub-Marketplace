@@ -15,9 +15,9 @@ interface CTASectionProps {
 }
 
 export const CTASection: React.FC<CTASectionProps> = ({
-  title = "Ready to Transform Your School?",
-  subtitle = "Join thousands of schools worldwide that are already benefiting from our platform.",
-  primaryLabel = "Request a Demo",
+  title = "Ready to Transform Your Salon?",
+  subtitle = "Join hundreds of salons already using SalonHub Marketplace to elevate their client experience and streamline daily operations.",
+  primaryLabel = "Book an appointment",
   primaryLink = "/contact",
   secondaryLabel = "Join / Partner With Us",
   secondaryLink = "/contact",
@@ -36,8 +36,8 @@ export const CTASection: React.FC<CTASectionProps> = ({
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 flex-wrap">
           <Button
             size="lg"
-            variant="secondary"
-            className="bg-accent-foreground text-accent hover:bg-accent-foreground/90 w-full sm:w-auto"
+            variant="default"
+            className=" w-full sm:w-auto"
             onClick={() => router.push(primaryLink)}
           >
             {primaryLabel}
@@ -47,7 +47,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
           <Button
             size="lg"
             variant="outline"
-            className="bg-transparent hover:border-gray-950 w-full sm:w-auto"
+            className="w-full sm:w-auto text-pink-900 border-pink-900"
             onClick={() => router.push(secondaryLink)}
           >
             {secondaryLabel}

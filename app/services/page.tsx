@@ -2,10 +2,9 @@
 import React from "react";
 import { Metadata } from "next"; // Import Metadata for SEO
 import Image from "next/image"; // For better image handling, though using inline style for background
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Wrench, Users, BookOpen, Lightbulb, ArrowRight } from "lucide-react"
-import backgroundImage from "@/public/robotics-lab-students-learning.jpg"; // Adjust path to public/assets for Next.js static serving
+
+import { Scissors, Calendar, Users, Megaphone, BarChart3, HeartHandshake } from 'lucide-react'
+import backgroundImage from "@/public/assets/salon-hero-1.jpg"; // Adjust path to public/assets for Next.js static serving
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://schoolforschools.com/robotics-lab-students-learning.jpg", // Use absolute URL for OG image; replace with optimized image if available
+        url: "https://schoolforschools.com/assets/salon-hero-1.jpg", // Use absolute URL for OG image; replace with optimized image if available
         width: 1200,
         height: 630,
         alt: "School for Schools Services - Empowering Schools with AI and Robotics",
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Our Services | School for Schools",
     description: "Professional services for AI, robotics, and innovation in education.",
-    images: ["https://schoolforschools.com/robotics-lab-students-learning.jpg"],
+    images: ["https://schoolforschools.com/assets/salon-hero-1.jpg"],
   },
   robots: {
     index: true,
@@ -48,7 +47,38 @@ export const metadata: Metadata = {
 };
 
 interface ServicesProps { }
-
+const services = [
+  {
+    icon: Scissors,
+    title: 'Client Management',
+    description: 'Keep track of appointments, preferences, and history effortlessly for a seamless client experience.',
+  },
+  {
+    icon: Calendar,
+    title: 'Staff Scheduling',
+    description: 'Simplify shift planning and boost productivity with smart scheduling tools.',
+  },
+  {
+    icon: Megaphone,
+    title: 'Marketing Automation',
+    description: 'Engage clients with personalized campaigns and automated reminders that reduce no-shows.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Analytics & Reports',
+    description: 'Gain valuable insights into your salon performance and make informed business decisions.',
+  },
+  {
+    icon: Users,
+    title: 'Team Collaboration',
+    description: 'Manage your staff, roles, and communication all in one intuitive dashboard.',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Salon Community',
+    description: 'Connect with other professionals, share success stories, and grow together.',
+  },
+]
 const Services: React.FC<ServicesProps> = () => {
     return (
         <>
@@ -63,7 +93,7 @@ const Services: React.FC<ServicesProps> = () => {
                         backgroundPosition: 'center',
                     }}
                 >
-                    <div className="absolute inset-0 bg-black/60" />
+                    <div className="absolute inset-0 bg-black/50" />
                 </div>
 
                 <div className="container relative z-10 text-center text-white">
@@ -75,60 +105,26 @@ const Services: React.FC<ServicesProps> = () => {
                     </p>
                 </div>
             </section>
-            {/* Services Grid */}
-            <section className="py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {[
-                            {
-                                icon: Wrench,
-                                title: "ERP Customization",
-                                description: "Tailor our ERP system to match your school's unique workflows and requirements.",
-                                features: ["Custom modules", "Integration setup", "Data migration", "System optimization"],
-                            },
-                            {
-                                icon: Lightbulb,
-                                title: "AI Lab Setup",
-                                description: "Complete setup of AI and robotics labs with curriculum integration.",
-                                features: ["Infrastructure setup", "Equipment procurement", "Curriculum design", "Lab management"],
-                            },
-                            {
-                                icon: Users,
-                                title: "Training & Support",
-                                description: "Comprehensive training programs for educators, staff, and administrators.",
-                                features: ["Staff training", "Educator workshops", "Student programs", "Ongoing support"],
-                            },
-                            {
-                                icon: BookOpen,
-                                title: "Implementation Consulting",
-                                description: "Expert guidance throughout your digital transformation journey.",
-                                features: ["Change management", "Process optimization", "Best practices", "Strategic planning"],
-                            },
-                        ].map((service, index) => {
-                            const Icon = service.icon
-                            return (
-                                <Card
-                                    key={index}
-                                    className="overflow-hidden p-8 hover:shadow-[8px_8px_0_0_#000] transition-all hover:-translate-y-1 animate-fade-in-up"
-                                    style={{ animationDelay: `${index * 100}ms` }}
-                                >
-                                    <Icon className="w-12 h-12 text-gray-900 mb-4" />
-                                    <h3 className="text-2xl font-bold text-foreground mb-3">{service.title}</h3>
-                                    <p className="text-muted-foreground mb-6">{service.description}</p>
-                                    <ul className="space-y-2">
-                                        {service.features.map((feature) => (
-                                            <li key={feature} className="flex items-center gap-2 text-foreground">
-                                                <div className="w-2 h-2 bg-primary rounded-full" />
-                                                {feature}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </Card>
-                            )
-                        })}
-                    </div>
-                </div>
-            </section>
+            <section className="py-20 bg-gradient-to-b from-white to-pink-50" id="services">
+      <div className="container mx-auto px-6 text-center">
+        
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ icon: Icon, title, description }) => (
+            <div
+              key={title}
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 p-8 text-left"
+            >
+              <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-rose-100 text-rose-700 mx-auto">
+                <Icon size={28} />
+              </div>
+              <h3 className="text-xl font-semibold text-pink-900 text-center mb-2">{title}</h3>
+              <p className="text-gray-600 text-center">{description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
             
                 <CTASection
                     title="Ready to Empower Your Students?"

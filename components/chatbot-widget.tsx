@@ -77,7 +77,7 @@ export function ChatbotWidget() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="  hover:shadow-xl  flex items-center justify-center 
-        fixed bottom-4 sm:bottom-4 right-4 sm:right-4 z-50 bg-gradient-to-br from-gray-800 to-gray-700 hover:bg-gray-900 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+        fixed bottom-4 sm:bottom-4 right-4 sm:right-4 z-50 bg-gradient-to-br from-pink-800 to-pink-700 hover:bg-pink-900 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
         aria-label="Open chat"
       >
         {isOpen ? <X className="w-6 h-6" /> : <img src="/chat.png" alt="Chatbot" className="w-5 sm:w-6 h-5 sm:h-6" />}
@@ -87,9 +87,9 @@ export function ChatbotWidget() {
       {isOpen && (
         <div className="chatbotUi fixed bottom-20 right-6 w-[87%] sm:w-96 h-[500px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden  animate-in fade-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
-          <div className="bg-black text-white p-4 flex items-center justify-between">
+          <div className="bg-primary text-white p-4 flex items-center justify-between">
             <div>
-              <h3 className="font-semibold text-lg">School for Schools</h3>
+              <h3 className="font-semibold text-lg">SalonHub Marketplace</h3>
               <p className="text-sm text-gray-100">Always here to help</p>
             </div>
           </div>
@@ -100,7 +100,7 @@ export function ChatbotWidget() {
               <div key={message.id} className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-xs px-4 py-2 rounded-lg ${message.sender === "user"
-                    ? "bg-black text-white rounded-br-none"
+                    ? "bg-primary text-white rounded-br-none"
                     : "bg-white text-gray-900 border border-gray-200 rounded-bl-none"
                     }`}
                 >
@@ -142,7 +142,7 @@ export function ChatbotWidget() {
               <Button
                 onClick={handleSendMessage}
                 disabled={isLoading || !inputValue.trim()}
-                className="rounded-full bg-black  text-white w-10 h-10 p-0 flex items-center justify-center"
+                className="rounded-full bg-primary  text-white w-10 h-10 p-0 flex items-center justify-center"
               >
                 <Send className="w-4 h-4" />
               </Button>

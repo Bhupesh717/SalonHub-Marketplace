@@ -37,7 +37,7 @@ export default function LogoMarquee() {
     <section className="py-16 bg-gray-50">
       <div className="container  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by Leading Salons Worldwide</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-pink-900 mb-4">Trusted by Leading Salons Worldwide</h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-xl mx-auto mb-8">
             Join the growing community of salons that trust our platform to elevate their client experience and transform the way they manage beauty services.
           </p>

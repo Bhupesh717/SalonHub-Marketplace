@@ -42,37 +42,46 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "Introduction",
-    content: "At TinkerTek Labs, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our educational technology services, including AI labs, ERP systems, and related tools. Effective: October 28, 2025.",
+    content:
+      "At GlamSync, we value your trust and are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our salon management platform, including client management, booking, and marketing automation tools. Effective: November 11, 2025.",
   },
   {
     title: "Information We Collect",
-    content: "We collect personal data such as names, emails, school affiliations, and usage analytics to provide personalized learning experiences. For students and educators, this includes performance data from AI interactions, always with consent.",
+    content:
+      "We collect personal data such as names, contact details, salon information, and usage analytics to provide a customized and seamless experience. For salon clients, this may include appointment history, preferences, and feedback — always collected with consent.",
   },
   {
     title: "How We Use Your Information",
-    content: "Your data helps us improve services, personalize content, and ensure compliance with educational standards like FERPA and GDPR. We do not sell your data to third parties.",
+    content:
+      "Your information helps us improve our services, personalize your experience, and ensure smooth salon operations. We use this data to enhance scheduling, marketing automation, and customer engagement. We never sell your information to third parties.",
   },
   {
     title: "Data Sharing and Security",
-    content: "We share data only with service providers (e.g., cloud hosts) under strict agreements. All data is encrypted using industry-standard protocols, and we conduct regular security audits.",
+    content:
+      "We only share data with trusted service providers (such as payment gateways or hosting partners) under strict confidentiality agreements. All personal data is encrypted using industry-standard security measures, and we perform regular system audits to maintain protection.",
   },
   {
     title: "Cookies and Tracking",
-    content: "Our site uses cookies for functionality and analytics. You can manage preferences via browser settings. We respect Do Not Track signals.",
+    content:
+      "Our platform uses cookies to ensure smooth functionality and analyze usage patterns. You can control or disable cookies through your browser settings at any time. We fully respect 'Do Not Track' preferences.",
   },
   {
     title: "Your Rights",
-    content: "You have the right to access, correct, or delete your data. Contact us at privacy@tinkerteklabs.com for requests. For EU users, GDPR rights apply.",
+    content:
+      "You have full control over your data. You can request access, correction, or deletion of your personal information at any time by contacting us at privacy@glamsync.com. Users in regions covered by GDPR or other privacy laws have all applicable rights.",
   },
   {
     title: "Changes to This Policy",
-    content: "We may update this policy; changes will be posted here with the effective date.",
+    content:
+      "We may update this Privacy Policy periodically to reflect improvements or legal updates. Any changes will be posted here with the updated effective date.",
   },
   {
     title: "Contact Us",
-    content: "If you have questions about this Privacy Policy or our privacy practices, please contact us at:",
+    content:
+      "For questions or concerns about this Privacy Policy or our data protection practices, please contact us at: privacy@glamsync.com.",
   },
-];
+]
+
 
 export default function PrivacyPage() {
   return (
@@ -98,14 +107,14 @@ export default function PrivacyPage() {
           <Badge variant="outline" className="mb-4 inline-block">
             Legal
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-[1.15]">
+          <h1 className="text-4xl md:text-5xl font-bold text-pink-900 mb-6 leading-[1.15]">
             Privacy Policy
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             Your trust is our priority. Understand how we handle your data securely.
           </p>
           <div className="flex justify-center">
-            <Shield className="h-12 w-12 text-primary/60" />
+            <Shield className="h-12 w-12 text-primary" />
           </div>
         </div>
       </section>
@@ -115,7 +124,7 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-8">
           {sections.map((section, index) => (
             <Card key={index} className="p-6 border-border">
-              <h2 className="text-2xl font-bold text-foreground mb-4">{section.title}</h2>
+              <h2 className="text-2xl font-bold text-pink-900 mb-4">{section.title}</h2>
               <p className="text-foreground/80 leading-relaxed text-[16px]">{section.content}</p>
             </Card>
           ))}
