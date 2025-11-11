@@ -8,6 +8,7 @@ import backgroundImage from "@/public/assets/salon-hero-1.jpg"; // Adjust path t
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Testimonials } from "@/components/testimonials";
 
 export const metadata: Metadata = {
   title: "Our Services | School for Schools",
@@ -84,7 +85,7 @@ const Services: React.FC<ServicesProps> = () => {
         <>
         <Header />
             {/* Hero Section */}
-            <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[400px] flex items-center justify-center overflow-hidden ">
                 <div
                     className="absolute inset-0 z-0"
                     style={{
@@ -125,7 +126,7 @@ const Services: React.FC<ServicesProps> = () => {
         </div>
       </div>
     </section>
-            
+            <Testimonials/>
                 <CTASection
                     title="Ready to Empower Your Students?"
                     subtitle="Join hundreds of schools using TinkerTek Labs to prepare students for the future."

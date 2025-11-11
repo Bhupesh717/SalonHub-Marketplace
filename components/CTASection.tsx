@@ -25,7 +25,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
   const router = useRouter();
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-r from-pink-300/20 to-pink-200/20 text-accent-foreground">
+    <section className="py-12 sm:py-16 md:py-24 bg-pink-50 text-accent-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-pink-900">
           {title}

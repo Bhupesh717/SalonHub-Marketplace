@@ -14,32 +14,32 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "School for Schools - Transforming Education with Technology",
+  title: "Salon Marketplace",
   description:
-    "School for Schools (SFS) provides innovative ERP solutions and AI-powered learning labs for modern education. Empower your school with cutting-edge technology.",
-  keywords: "school management, ERP system, education technology, AI learning, robotics labs, school software",
+    "Salon Marketplace - Find the best salons and services",
+  keywords: "salon marketplace, salon management, salon software, salon booking, salon appointment",
   generator: "v0.app",
-  metadataBase: new URL("https://schoolforschools.com"),
+  metadataBase: new URL("https://salonmarketplace.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://schoolforschools.com",
-    siteName: "School for Schools",
-    title: "School for Schools - Transforming Education with Technology",
-    description: "Innovative ERP solutions and AI-powered learning labs for modern education",
+    url: "https://salonmarketplace.com",
+    siteName: "Salon Marketplace",
+    title: "Salon Marketplace - Find the best salons and services",
+    description: "Salon Marketplace - Find the best salons and services",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "School for Schools",
+        alt: "Salon Marketplace",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "School for Schools - Transforming Education with Technology",
-    description: "Innovative ERP solutions and AI-powered learning labs for modern education",
+    title: "Salon Marketplace - Find the best salons and services",
+    description: "Salon Marketplace - Find the best salons and services",
     images: ["/og-image.jpg"],
   },
 }
@@ -54,7 +54,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://schoolforschools.com" />
+        <link rel="canonical" href="https://salonmarketplace.com" />
         {/* ✅ Schema.org Structured Data */}
         <script
           type="application/ld+json"
@@ -62,15 +62,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "School for Schools",
-              "url": "https://schoolforschools.com",
-              "logo": "https://schoolforschools.com/logo.png",
+              "name": "Salon Marketplace",
+              "url": "https://salonmarketplace.com",
+              "logo": "https://salonmarketplace.com/logo.png",
               "description":
-                "School for Schools (SFS) provides innovative ERP and AI-powered learning solutions for modern education.",
+                "Salon Marketplace - Find the best salons and services",
               "sameAs": [
-                "https://www.facebook.com/schoolforschools",
-                "https://www.instagram.com/schoolforschools",
-                "https://www.linkedin.com/company/schoolforschools"
+                "https://www.facebook.com/salonmarketplace",
+                "https://www.instagram.com/salonmarketplace",
+                "https://www.linkedin.com/company/salonmarketplace"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",

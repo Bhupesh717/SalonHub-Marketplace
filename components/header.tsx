@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,6 +12,7 @@ import { useAuthStore } from '@/stores/useAuthStore';
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const pathname = usePathname();
   const { isAuthenticated } = useAuthStore();
 
   // This ensures we only render the auth-dependent UI after mounting (client-side)
@@ -21,8 +23,8 @@ export function Header() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Salons", href: "/salons" },
-    { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -78,7 +80,11 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  pathname === item.href 
+                    ? 'text-primary' 
+                    : 'text-foreground/70 hover:text-primary'
+                }`}
               >
                 {item.label}
               </Link>
