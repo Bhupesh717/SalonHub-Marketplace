@@ -290,7 +290,7 @@ export default function UsersPage() {
         <div className={cn("space-y-6", "bg-white text-black dark:bg-black dark:text-white")}>
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="flex gap-2 text-3xl font-bold">
+                    <h1 className="flex gap-2 text-3xl font-bold text-pink-900">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-users h-8 w-8" aria-hidden="true">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                             <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
@@ -313,9 +313,9 @@ export default function UsersPage() {
                             Add User
                         </Button>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[425px]">
+                    <DialogContent className="sm:max-w-[425px] text-pink-950">
                         <DialogHeader>
-                            <DialogTitle>{isCreateMode ? 'Add New User' : 'Edit User'}</DialogTitle>
+                            <DialogTitle className='text-pink-900'>{isCreateMode ? 'Add New User' : 'Edit User'}</DialogTitle>
                             <DialogDescription>
                                 {isCreateMode ? 'Enter user details below' : 'Update user information'}
                             </DialogDescription>
@@ -494,7 +494,7 @@ export default function UsersPage() {
                                 value={pageSize}
                                 onValueChange={(val) => setPageSize(val)}
                             >
-                                <SelectTrigger className="w-[80px] h-9">
+                                <SelectTrigger className="w-[80px] h-9 text-gray-900">
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -565,7 +565,7 @@ export default function UsersPage() {
                                                     <div className="flex justify-end gap-2 items-center">
                                                         {user.isActive && (
                                                             <Button
-                                                                variant="ghost"
+                                                                variant="default"
                                                                 size="icon"
                                                                 onClick={() => handleEdit(user)}
                                                                 aria-label={`Edit ${user.name}`}
@@ -574,7 +574,7 @@ export default function UsersPage() {
                                                             </Button>
                                                         )}
                                                         <Switch
-                                                            className='w-7'
+                                                            className='w-[60px]'
                                                             checked={user.isActive}
                                                             onCheckedChange={(checked) =>
                                                                 handleStatusToggle(user.id, checked)

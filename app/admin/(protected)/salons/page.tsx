@@ -43,6 +43,7 @@ import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 // ---------- Validation ----------
 const createSalonSchema = z.object({
@@ -216,7 +217,7 @@ export default function SalonsPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="flex gap-2 text-3xl font-bold">
+          <h1 className="flex gap-2 text-3xl font-bold text-pink-900">
             <Store className="h-8 w-8" />
             Salon Management
           </h1>
@@ -237,9 +238,9 @@ export default function SalonsPage() {
             </Button>
           </DialogTrigger>
 
-          <DialogContent className="sm:max-w-[500px]">
+          <DialogContent className="sm:max-w-[500px] text-pink-950">
             <DialogHeader>
-              <DialogTitle>{isCreate ? 'Add New Salon' : 'Edit Salon'}</DialogTitle>
+              <DialogTitle className='text-pink-900'>{isCreate ? 'Add New Salon' : 'Edit Salon'}</DialogTitle>
               <DialogDescription>
                 {isCreate ? 'Enter salon details' : 'Update salon information'}
               </DialogDescription>
@@ -402,16 +403,20 @@ export default function SalonsPage() {
             {/* Page size */}
             <div className="flex items-center gap-2">
               <div className="text-sm text-muted-foreground">Show</div>
-              <select
-                value={pageSize}
-                onChange={(e) => setPageSize(e.target.value)}
-                className="h-9 w-[80px] rounded border px-2 text-sm"
-              >
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="50">50</option>
-                <option value="all">All</option>
-              </select>
+              <Select
+                                value={pageSize}
+                                onValueChange={(val) => setPageSize(val)}
+                            >
+                                <SelectTrigger className="w-[80px] h-9 text-gray-900">
+                                    <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="10">10</SelectItem>
+                                    <SelectItem value="20">20</SelectItem>
+                                    <SelectItem value="50">50</SelectItem>
+                                    <SelectItem value="all">All</SelectItem>
+                                </SelectContent>
+                            </Select>
             </div>
 
             {/* Search */}
@@ -479,7 +484,7 @@ export default function SalonsPage() {
                           <div className="flex justify-end gap-2 items-center">
                             {s.isActive && (
                               <Button
-                                variant="ghost"
+                                variant="default"
                                 size="icon"
                                 onClick={() => openEdit(s)}
                                 aria-label={`Edit ${s.name}`}
@@ -488,6 +493,7 @@ export default function SalonsPage() {
                               </Button>
                             )}
                             <Switch
+                            className='w-[60px]'
                               checked={s.isActive}
                               onCheckedChange={(c) => toggleStatus(s.id, c)}
                               aria-label={`Toggle ${s.name}`}

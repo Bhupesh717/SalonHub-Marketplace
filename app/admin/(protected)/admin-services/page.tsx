@@ -231,7 +231,7 @@ export default function ServicesPage() {
       {/* Header + Add button */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="flex gap-2 text-3xl font-bold">
+          <h1 className="flex gap-2 text-3xl font-bold text-pink-900">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -429,7 +429,7 @@ export default function ServicesPage() {
                         <TableCell className="text-right">
                           <div className="flex justify-end gap-2 items-center">
                             <Button
-                              variant="ghost"
+                              variant="default"
                               size="icon"
                               onClick={() => openEdit(svc)}
                               aria-label={`Edit ${svc.name}`}
@@ -438,6 +438,7 @@ export default function ServicesPage() {
                             </Button>
 
                             <Switch
+                            className='w-[60px]'
                               checked={svc.isActive}
                               onCheckedChange={(c) => toggleStatus(svc.id, c)}
                               aria-label={`Toggle ${svc.name} status`}
